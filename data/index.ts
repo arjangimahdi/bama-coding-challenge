@@ -2,6 +2,7 @@
 import { BrandCategories, Brands } from "~/interfaces/brands.interface";
 import { Models } from "~/interfaces/models.interface";
 import { Trims } from "~/interfaces/trims.interface";
+import { Years } from "~/interfaces/years.interface";
 
 export const totalDealsCount: number = 875054;
 
@@ -121,9 +122,32 @@ export const trims : Trims[] = [
         name: '28',
         model_id: 3,
     },
+]
+
+export const years : Years[] = [
+    {
+        id: 1,
+        year: '2018',
+        trim_id: 1,
+    },
+    {
+        id: 2,
+        year: '2020',
+        trim_id: 1,
+    },
     {
         id: 3,
-        name: '58',
+        year: '2018',
+        trim_id: 2,
+    },
+    {
+        id: 4,
+        year: '2018',
+        model_id: 4,
+    },
+    {
+        id: 5,
+        year: '2022',
         model_id: 4,
     },
 ]

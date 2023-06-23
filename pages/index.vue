@@ -28,6 +28,9 @@
                     <app-brands-list v-if="activeFilter == 'brand'" />
                     <app-models-list v-if="activeFilter == 'model'" />
                     <app-trims-list v-if="activeFilter == 'trim'" />
+                    <pre v-if="activeFilter == 'year'">
+                        {{ years }}
+                    </pre>
                 </div>
 
                 <p class="home-body-content-paragraph text-sm text-gray-300">
@@ -55,9 +58,9 @@ import AppTrimsList from "~/components/AppTrimsList.vue";
 
 // * store
 import { useFiltersStore } from "~/store/filters.store";
-import { useTrimsStore } from "~/store/trims.store";
+import { useYearsStore } from "~/store/years.store";
 const { filters, removeFilter, activeFilter, setActiveFilter } = useFiltersStore();
-const { trims } = useTrimsStore();
+const { years } = useYearsStore();
 
 setActiveFilter("brand");
 

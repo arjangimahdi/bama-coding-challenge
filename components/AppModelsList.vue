@@ -20,9 +20,11 @@ import { Models } from "~/interfaces/models.interface";
 import { useFiltersStore } from "~/store/filters.store";
 import { useModelsStore } from "~/store/models.store";
 import { useTrimsStore } from "~/store/trims.store";
+import { useYearsStore } from "~/store/years.store";
 const { addFilter, setActiveFilter } = useFiltersStore();
 const { models } = useModelsStore();
 const { findTrims } = useTrimsStore();
+const { findYears } = useYearsStore();
 
 // * methods
 const selectModelHandler = (model: Models) => {
@@ -36,8 +38,18 @@ const selectModelHandler = (model: Models) => {
 
     // addFilter(payload);
     findTrims(model.id)
-        .then(() => {
-            setActiveFilter("trim");
+        .then((response) => {
+            if (response.length > 0) {
+                setActiveFilter("trim");
+            } else {
+                findYears(model.id, "model")
+                    .then(() => {
+                        setActiveFilter("year");
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
             addFilter(payload);
         })
         .catch((error) => {

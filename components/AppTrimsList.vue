@@ -19,8 +19,10 @@ import { Trims } from "~/interfaces/trims.interface";
 // * store
 import { useFiltersStore } from "~/store/filters.store";
 import { useTrimsStore } from "~/store/trims.store";
-const { addFilter } = useFiltersStore();
+import { useYearsStore } from "~/store/years.store";
+const { addFilter, setActiveFilter } = useFiltersStore();
 const { trims } = useTrimsStore();
+const { findYears } = useYearsStore();
 
 // * methods
 const selectTrimHandler = (trim: Trims) => {
@@ -32,18 +34,17 @@ const selectTrimHandler = (trim: Trims) => {
         },
     };
 
-    addFilter(payload);
-    // findTrims(trim.id)
-    //     .then(() => {
-    //         setActiveFilter("trim");
-    //         addFilter(payload);
-    //     })
-    //     .catch((error) => {
-    //         console.error(error);
-    //     })
-    //     .finally(() => {
-    //         // process done
-    //     });
+    findYears(trim.id, "trim")
+        .then(() => {
+            setActiveFilter("year");
+            addFilter(payload);
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+        .finally(() => {
+            // process done
+        });
 };
 </script>
 
