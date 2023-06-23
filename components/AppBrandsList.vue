@@ -9,7 +9,7 @@
                     </li>
                     <template v-for="brand in category.brands" :key="brand.id">
                         <div class="app-brands-list-item-inner" style="margin-top: 16px">
-                            <app-button color="aqua" size="sm" variant="flat">
+                            <app-button color="aqua" size="sm" variant="flat" @click="selectBrandHandler(brand)">
                                 {{ brand.name }}
                             </app-button>
                         </div>
@@ -23,11 +23,31 @@
 <script lang="ts" setup>
 // * data
 import { brands, brandCategories as categories } from "~/data";
+
+// * interfaces
+import { Brands } from "~/interfaces/brands.interface";
+
 // * store
-import { useBrandsListStore as store } from "~/store/brands-list.store";
-const { brandsCategories, fetchBrands } = store();
+import { useFiltersStore } from "~/store/filters.store";
+import { useBrandsListStore } from "~/store/brands-list.store";
+const { addFilter } = useFiltersStore();
+const { brandsCategories, fetchBrands } = useBrandsListStore();
+
 // fetching brands that merged with their brandCategory
 fetchBrands(brands, categories);
+
+// * methods
+const selectBrandHandler = (brand: Brands) => {
+    const payload = {
+        name: brand.name,
+        entity: {
+            id: brand.category_id,
+            name: "brand",
+        },
+    };
+
+    addFilter(payload)
+};
 </script>
 
 <style lang="scss">

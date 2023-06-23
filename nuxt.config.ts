@@ -7,4 +7,5 @@ export default defineNuxtConfig({
         },
     },
     css: ["@/assets/css/vazir.css"],
+    modules: ["nuxt-icon"],
 });

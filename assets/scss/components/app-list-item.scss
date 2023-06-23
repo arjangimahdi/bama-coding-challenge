@@ -1,0 +1,12 @@
+.app-list-item {
+  display: flex;
+  min-width: 140px;
+  margin-top: 10px;
+  border-radius: 4px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  &-title {
+    padding-right: 8px;
+  }
+}

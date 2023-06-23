@@ -13,9 +13,16 @@
                     <span class="text-2xl weight-medium text-aqua-400">{{ _totalDealsCount }}</span>
                     معامله صورت گرفته
                 </p>
+                <div class="home-body-filters-list" style="margin-top: 10px">
+                    <template v-for="filter in filters" :key="filter.index">
+                        <app-list-item @remove="removeFilterHandler(filter)">
+                            {{ filter.name }}
+                        </app-list-item>
+                    </template>
+                </div>
             </aside>
             <section class="home-body-content" style="padding-right: 24px">
-                <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px;">برند خود را انتخاب کنید</h4>
+                <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">برند خود را انتخاب کنید</h4>
                 <app-brands-list />
             </section>
         </div>
@@ -25,12 +32,24 @@
 <script lang="ts" setup>
 // * data
 import { totalDealsCount } from "~/data";
+
 // * components
+import AppListItem from "~/components/AppListItem.vue";
 import AppBrandsList from "~/components/AppBrandsList.vue";
+
+// * store
+import { useFiltersStore } from "~/store/filters.store";
+const { filters, removeFilter } = useFiltersStore();
+
 // * computed properties
 const _totalDealsCount = computed(() => {
     return totalDealsCount.toLocaleString();
 });
+
+// * methods
+const removeFilterHandler = ({ index }) => {
+    removeFilter(index);
+};
 </script>
 
 <style lang="scss">

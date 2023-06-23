@@ -1,5 +1,9 @@
 <template>
-    <button class="app-button" :class="[`size-${size}`, `variant-${variant}`]" :style="colorVariables">
+    <button
+        class="app-button"
+        :style="colorVariables"
+        :class="[`size-${size}`, `variant-${variant}`, square ? 'square' : '']"
+    >
         <slot />
     </button>
 </template>
@@ -12,12 +16,14 @@ import { Sizes, Variants } from "~/types/app-button.type";
 interface Props {
     size: Sizes;
     color: Colors;
+    square?: boolean;
     variant: Variants;
 }
 // * props
 const props = withDefaults(defineProps<Props>(), {
     size: "md",
     color: "aqua",
+    square: false,
     variant: "default",
 });
 
@@ -30,53 +36,5 @@ const colorVariables = computed(() => {
 </script>
 
 <style lang="scss">
-.app-button {
-    color: var(--theme-gray-500);
-    &.size {
-        &-sm {
-            border-radius: 3px;
-            font-size: 0.75rem;
-            min-width: 45px;
-            padding: 2px 8px;
-        }
-        &-md {
-            border-radius: 5px;
-            font-size: 0.875rem;
-            min-width: 80px;
-            padding: 6px 10px;
-        }
-        &-lg {
-            border-radius: 8px;
-            font-size: 1rem;
-            min-width: 100px;
-            padding: 8px 12px;
-        }
-    }
-    &.variant {
-        &-outlined {
-            background: transparent;
-            color: var(--btn-primary-color);
-            border: 1px solid var(--btn-primary-color);
-        }
-        &-flat {
-            background: transparent;
-            color: var(--theme-gray-300);
-            border: 1px solid transparent;
-            &:hover {
-                color: var(--theme-gray-400);
-                border: 1px solid var(--btn-primary-color);
-            }
-        }
-        &-default {
-            border: none;
-            color: white;
-            background: var(--btn-primary-color);
-        }
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
-}
+@import "~/assets/scss/components/app-button.scss";
 </style>
-~/types/colors.type~/types/app-button.type
