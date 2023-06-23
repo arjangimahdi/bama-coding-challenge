@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assets/fonts/vazir/vazir-bold.eot");
+    src: local("Vazir Bold"), local("Vazir Bold"),
+        url("../../assets/fonts/vazir/vazir-bold.eot?#iefix") format("embedded-opentype"),
+        url("../../assets/fonts/vazir/vazir-bold.woff") format("woff"),
+        url("../../assets/fonts/vazir/vazir-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assets/fonts/vazir/vazir-medium.eot");
+    src: local("Vazir Medium"), local("Vazir Medium"),
+        url("../../assets/fonts/vazir/vazir-medium.eot?#iefix") format("embedded-opentype"),
+        url("../../assets/fonts/vazir/vazir-medium.woff") format("woff"),
+        url("../../assets/fonts/vazir/vazir-medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assets/fonts/vazir/vazir.eot");
+    src: local("Vazir"), local("Vazir"), url("../../assets/fonts/vazir/vazir.eot?#iefix") format("embedded-opentype"),
+        url("../../assets/fonts/vazir/vazir.woff") format("woff"),
+        url("../../assets/fonts/vazir/vazir.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assets/fonts/vazir/vazir-light.eot");
+    src: local("Vazir Light"), local("Vazir Light"),
+        url("../../assets/fonts/vazir/vazir-light.eot?#iefix") format("embedded-opentype"),
+        url("../../assets/fonts/vazir/vazir-light.woff") format("woff"),
+        url("../../assets/fonts/vazir/vazir-light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assets/fonts/vazir/vazir-thin.eot");
+    src: local("Vazir Thin"), local("Vazir Thin"),
+        url("../../assets/fonts/vazir/vazir-thin.eot?#iefix") format("embedded-opentype"),
+        url("../../assets/fonts/vazir/vazir-thin.woff") format("woff"),
+        url("../../assets/fonts/vazir/vazir-thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+* {
+    font-family: "Vazir", sans-serif;
+}

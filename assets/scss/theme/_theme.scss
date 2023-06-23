@@ -1,0 +1,42 @@
+@import "./variables";
+
+// * typography utility classes
+@each $name, $sizes in $typographies {
+    @each $size, $properties in $sizes {
+        @each $property, $value in $properties {
+            .#{$name}-#{$size} {
+                #{$property}: #{$value} !important;
+            }
+        }
+    }
+}
+
+// * text colors utility classes
+@each $name, $shades in $colors {
+    @each $size, $value in $shades {
+        :root {
+            --theme-#{$name}-#{$size}: #{$value};
+        }
+        .text-#{$name}-#{$size} {
+            color: $value;
+        }
+    }
+}
+
+// * background colors utility classes
+@each $name, $shades in $colors {
+    @each $size, $value in $shades {
+        .bg-#{$name}-#{$size} {
+            background-color: $value;
+        }
+    }
+}
+
+// * border colors utility classes
+// @each $name, $shades in $colors {
+//     @each $size, $value in $shades {
+//         .border-#{$name}-#{$size} {
+//             border: 1px solid $value;
+//         }
+//     }
+// }

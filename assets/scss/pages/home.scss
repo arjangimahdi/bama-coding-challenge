@@ -1,0 +1,36 @@
+.home {
+    &-heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 32px;
+        &-title {
+            margin: 0px;
+        }
+        &-subtitle {
+            margin: 0px;
+        }
+    }
+    &-body {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        &-sidebar {
+            width: 17%;
+            margin-left: 20px;
+        }
+        &-content {
+            height: 500px;
+            width: 83%;
+            border-right: 1px solid #DCDCE3;
+        }
+    }
+}
+
+.vertical-separator {
+    width: 1px;
+    height: 16px;
+    margin: 0px 8px;
+}

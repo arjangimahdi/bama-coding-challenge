@@ -1,0 +1,69 @@
+$typographies: (
+    "text": (
+        "4xl": (
+            "font-size": 3px,
+        ),
+        "3xl": (
+            "font-size": 2rem,
+        ),
+        "2xl": (
+            "font-size": 1.5rem,
+        ),
+        "xl": (
+            "font-size": 1.125rem,
+        ),
+        "lg": (
+            "font-size": 1rem,
+        ),
+        "md": (
+            "font-size": 0.875rem,
+        ),
+        "sm": (
+            "font-size": 0.75rem,
+        ),
+        "xs": (
+            "font-size": 0.625rem,
+        ),
+    ),
+    "weight": (
+        "thin": (
+            "font-weight": 100,
+        ),
+        "light": (
+            "font-weight": 300,
+        ),
+        "normal": (
+            "font-weight": 400,
+        ),
+        "medium": (
+            "font-weight": 500,
+        ),
+        "bold": (
+            "font-weight": 700,
+        ),
+    ),
+);
+
+$colors: (
+    "gray": (
+        "500": #222225,
+        "400": #656570,
+        "300": #A8A8BA,
+        "200": #DCDCE3,
+        "100": #FFFFFF,
+    ),
+    "aqua": (
+        "500": #003D3D,
+        "400": #007A7A,
+        "300": #00CCCC,
+        "200": #93EBEB,
+        "100": #DCFAFA,
+    ),
+    "fuchsia": (
+        "500": #581C87,
+        "400": #7E22CE,
+        "300": #A855F7,
+        "200": #F0ABFC,
+        "100": #FAE8FF,
+    ),
+);
