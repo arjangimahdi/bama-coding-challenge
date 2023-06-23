@@ -21,9 +21,20 @@
                     </template>
                 </div>
             </aside>
-            <section class="home-body-content" style="padding-right: 24px">
+            <section class="home-body-content">
                 <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">برند خود را انتخاب کنید</h4>
-                <app-brands-list />
+
+                <div class="home-body-content-inner" style="padding-right: 20px">
+                    <app-brands-list v-if="activeFilter == 'brand'" />
+                    <app-models-list v-if="activeFilter == 'model'" />
+                    <app-trims-list v-if="activeFilter == 'trim'" />
+                </div>
+
+                <p class="home-body-content-paragraph text-sm text-gray-300">
+                    قیمت خودرو ها براسال پایش، تجمیع و تحلیل قیمت های اعلام شده توسط نمایندگی ها ، قیمت معاملات انجام
+                    شده در بیش از 150 نمایشگاه فعال سطح کشور و مراکز خرید و قروش پایتخت و نیز بررسی های میدانی در بازار
+                    خودرو به صورت روزانه استخراج می شود.
+                </p>
             </section>
         </div>
     </div>
@@ -33,13 +44,22 @@
 // * data
 import { totalDealsCount } from "~/data";
 
+// * interfaces
+import { Filters } from "~/interfaces/filters.interface";
+
 // * components
 import AppListItem from "~/components/AppListItem.vue";
 import AppBrandsList from "~/components/AppBrandsList.vue";
+import AppModelsList from "~/components/AppModelsList.vue";
+import AppTrimsList from "~/components/AppTrimsList.vue";
 
 // * store
 import { useFiltersStore } from "~/store/filters.store";
-const { filters, removeFilter } = useFiltersStore();
+import { useTrimsStore } from "~/store/trims.store";
+const { filters, removeFilter, activeFilter, setActiveFilter } = useFiltersStore();
+const { trims } = useTrimsStore();
+
+setActiveFilter("brand");
 
 // * computed properties
 const _totalDealsCount = computed(() => {
@@ -47,8 +67,10 @@ const _totalDealsCount = computed(() => {
 });
 
 // * methods
-const removeFilterHandler = ({ index }) => {
-    removeFilter(index);
+const removeFilterHandler = (filter: Filters) => {
+    setActiveFilter(filter.entity.name);
+
+    removeFilter(filter.index);
 };
 </script>
 

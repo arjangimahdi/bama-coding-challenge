@@ -29,9 +29,11 @@ import { Brands } from "~/interfaces/brands.interface";
 
 // * store
 import { useFiltersStore } from "~/store/filters.store";
-import { useBrandsListStore } from "~/store/brands-list.store";
-const { addFilter } = useFiltersStore();
-const { brandsCategories, fetchBrands } = useBrandsListStore();
+import { useBrandsStore } from "~/store/brands.store";
+import { useModelsStore } from "~/store/models.store";
+const { addFilter, setActiveFilter } = useFiltersStore();
+const { brandsCategories, fetchBrands } = useBrandsStore();
+const { findModels } = useModelsStore();
 
 // fetching brands that merged with their brandCategory
 fetchBrands(brands, categories);
@@ -46,10 +48,21 @@ const selectBrandHandler = (brand: Brands) => {
         },
     };
 
-    addFilter(payload)
+    findModels(brand.id)
+        .then(() => {
+            setActiveFilter("model");
+            addFilter(payload);
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+        .finally(() => {
+            // process done
+        });
 };
 </script>
 
 <style lang="scss">
 @import "~/assets/scss/components/app-brands-list.scss";
 </style>
+~/store/brands.store

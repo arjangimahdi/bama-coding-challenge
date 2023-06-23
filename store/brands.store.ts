@@ -1,6 +1,6 @@
 import { BrandCategories, Brands } from "~/interfaces/brands.interface";
 
-export const useBrandsListStore = () => {
+export const useBrandsStore = () => {
     // states
     const brandsCategories = useState<BrandCategories[]>();
 

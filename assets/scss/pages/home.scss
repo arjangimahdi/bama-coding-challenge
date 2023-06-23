@@ -18,13 +18,30 @@
         align-items: flex-start;
         justify-content: flex-start;
         &-sidebar {
-            width: 17%;
+            width: 15%;
             margin-left: 20px;
         }
         &-content {
-            height: 500px;
-            width: 83%;
-            border-right: 1px solid #DCDCE3;
+            width: 70%;
+            &-inner {
+                height: 500px;
+                margin-bottom: 32px;
+                border-right: 1px solid #dcdce3;
+            }
+            &-paragraph {
+                padding-right: 10px;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    position: absolute;
+                    border-radius: 2px;
+                    background-color: var(--theme-gray-300);
+                    top: 6px;
+                    right: 0px;
+                }
+            }
         }
     }
 }
