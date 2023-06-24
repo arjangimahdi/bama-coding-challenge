@@ -1,12 +1,14 @@
 // * data
 import { trims as data } from "~/data";
+
 // * interfaces
 import { Trims } from "~/interfaces/trims.interface";
 
 export const useTrimsStore = () => {
-    // states
+    // * states
     const trims = useState<Trims[]>();
-    // actions
+
+    // * actions
     const findTrims = async (modelId: number): Promise<any> => {
         let response;
 

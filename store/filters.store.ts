@@ -1,11 +1,12 @@
+// * interfaces
 import { Filters } from "~/interfaces/filters.interface";
 
 export const useFiltersStore = () => {
-    // states
+    // * states
     const filters = useState<Filters[]>();
     const activeFilter = useState<string>();
 
-    // actions
+    // * actions
     const setActiveFilter = (filter: string) => {
         activeFilter.value = filter;
     };

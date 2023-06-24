@@ -1,10 +1,11 @@
+// * interfaces
 import { BrandCategories, Brands } from "~/interfaces/brands.interface";
 
 export const useBrandsStore = () => {
-    // states
+    // * states
     const brandsCategories = useState<BrandCategories[]>();
 
-    // mutations
+    // * mutations
     const setBrands = async (brands: Brands[], categories: BrandCategories[]): Promise<any> => {
         let response;
 
@@ -31,7 +32,7 @@ export const useBrandsStore = () => {
         return response;
     };
     
-    // actions
+    // * actions
     const fetchBrands = (brands: Brands[], categories: BrandCategories[]): void => {
         setBrands(brands, categories)
             .then((response) => {

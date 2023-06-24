@@ -10,8 +10,8 @@
 
 <script lang="ts" setup>
 // * types
-import { Colors } from "~/types/colors.type";
-import { Sizes, Variants } from "~/types/app-button.type";
+import { Sizes, Variants, Colors } from "~/types/app-button.type";
+
 // * interfaces
 interface Props {
     size: Sizes;
@@ -19,6 +19,7 @@ interface Props {
     square?: boolean;
     variant: Variants;
 }
+
 // * props
 const props = withDefaults(defineProps<Props>(), {
     size: "md",
@@ -27,6 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
     variant: "default",
 });
 
+// * computed properties
 const colorVariables = computed(() => {
     return {
         "--btn-primary-color": `var(--theme-${props.color}-300)`,

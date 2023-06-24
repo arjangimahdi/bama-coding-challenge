@@ -1,12 +1,14 @@
 // * data
 import { models as data } from "~/data";
+
 // * interfaces
 import { Models } from "~/interfaces/models.interface";
 
 export const useModelsStore = () => {
-    // states
+    // * states
     const models = useState<Models[]>();
-    // actions
+
+    // * actions
     const findModels = async (brandId: number): Promise<any> => {
         let response;
 

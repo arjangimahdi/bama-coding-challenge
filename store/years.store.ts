@@ -1,12 +1,14 @@
 // * data
 import { years as data } from "~/data";
+
 // * interfaces
 import { Years } from "~/interfaces/years.interface";
 
 export const useYearsStore = () => {
-    // states
+    // * states
     const years = useState<Years[]>();
-    // actions
+
+    // * actions
     const findYears = async (id: number, type: "trim" | "model"): Promise<any> => {
         let response;
 
