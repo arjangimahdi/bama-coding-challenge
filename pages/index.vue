@@ -56,6 +56,10 @@ import AppTrimsList from "~/components/AppTrimsList.vue";
 import AppYearsList from "~/components/AppYearsList.vue";
 import AppCardMileage from '~/components/AppCarMileage.vue';
 
+useHead({
+    title: 'Bama - Car Price Calculation'
+})
+
 // * store
 import { useFiltersStore } from "~/store/filters.store";
 const { filters, removeFilter, activeFilter, setActiveFilter } = useFiltersStore();

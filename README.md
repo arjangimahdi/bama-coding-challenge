@@ -1,35 +1,46 @@
-# Nuxt 3 Minimal Starter
+<div style="text-align: center;">
+  <br />
+  <br />
+  <h1>Car Price Calculation</h1>
+  <div style="text-align: center">
+    <h3><a href="https://bama-coding-challenge.netlify.app/"  target="_blank">Demo</a></h3>
+  </div>
+  <div style="text-align: center">
+    <h2>Bama Coding Challenge (Frontend - Nuxt.js)</h2>
+  </div>
+  
+  <p>This project is a evaluation project for <a href="https://bama.ir/">Bama.ir</a> company </p>
+</div>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<br>
+<br>
 
-## Setup
+![Project Banner](demo/banner.png)
 
-Make sure to install the dependencies:
+<br>
+<br>
+
+## Project Overview
+
+The **Car Price Calculation** project built with [Nuxt 3](https://nuxt.com/). According to the rules of the project, some dependencies should not be used, for state management i used Nuxt built in useState composable.
+
+## 🚀 Setup
+
+In your terminal, install all node dependencies:
 
 ```bash
-# npm
+cd bama-coding-challenge
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
 ```
+
+<br>
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+Build the application for development environment:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
 ```
 
 ## Production
@@ -37,27 +48,11 @@ yarn dev
 Build the application for production:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

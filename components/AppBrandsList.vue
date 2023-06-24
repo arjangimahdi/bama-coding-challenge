@@ -1,9 +1,9 @@
 <template>
-    <div class="app-brands-list" v-if="brandsCategories">
+    <div class="app-brands-list" v-if="data">
         <h4 class="text-lg weight-medium text-gray-500 mb-3">برند خود را انتخاب کنید</h4>
 
         <ul class="app-brands-list-inner">
-            <template v-for="category in brandsCategories" :key="category.id">
+            <template v-for="category in data" :key="category.id">
                 <div class="app-brands-list-item-outer" v-if="category.brands?.length > 0">
                     <li class="app-brands-list-item text-aqua-300 text-md weight-bold mt-3">
                         {{ category.title }}
@@ -33,11 +33,11 @@ import { useFiltersStore } from "~/store/filters.store";
 import { useBrandsStore } from "~/store/brands.store";
 import { useModelsStore } from "~/store/models.store";
 const { addFilter, setActiveFilter } = useFiltersStore();
-const { brandsCategories, fetchBrands } = useBrandsStore();
+const { fetchBrands } = useBrandsStore();
 const { findModels } = useModelsStore();
 
 // fetching brands that merged with their brandCategory
-fetchBrands(brands, categories);
+const { data } = await useAsyncData('brands', () => fetchBrands(brands, categories));
 
 // * methods
 const selectBrandHandler = (brand: Brands) => {

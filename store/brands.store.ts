@@ -2,9 +2,6 @@
 import { BrandCategories, Brands } from "~/interfaces/brands.interface";
 
 export const useBrandsStore = () => {
-    // * states
-    const brandsCategories = useState<BrandCategories[]>();
-
     // * mutations
     const setBrands = async (brands: Brands[], categories: BrandCategories[]): Promise<any> => {
         let response;
@@ -31,20 +28,11 @@ export const useBrandsStore = () => {
 
         return response;
     };
-    
+
     // * actions
-    const fetchBrands = (brands: Brands[], categories: BrandCategories[]): void => {
-        setBrands(brands, categories)
-            .then((response) => {
-                brandsCategories.value = response;
-            })
-            .catch((error) => {
-                console.error(error);
-            })
-            .finally(() => {
-                // process done
-            });
+    const fetchBrands = (brands: Brands[], categories: BrandCategories[]): Promise<any> => {
+        return setBrands(brands, categories);
     };
 
-    return { brandsCategories, fetchBrands };
+    return { fetchBrands };
 };
