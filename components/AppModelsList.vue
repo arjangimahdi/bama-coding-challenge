@@ -1,5 +1,7 @@
 <template>
     <div class="app-models-list">
+        <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">مدل موردنظر را انتخاب کنید</h4>
+
         <ul class="app-models-list-inner" v-if="models.length > 0">
             <template v-for="model in models" :key="model.id">
                 <div class="app-models-list-item-inner" style="margin-top: 16px">

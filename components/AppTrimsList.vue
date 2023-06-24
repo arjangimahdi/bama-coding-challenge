@@ -1,5 +1,7 @@
 <template>
     <div class="app-trims-list">
+        <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">تریم موردنظر را انتخاب کنید</h4>
+
         <ul class="app-trims-list-inner" v-if="trims.length > 0">
             <template v-for="trim in trims" :key="trim.id">
                 <div class="app-trims-list-item-inner" style="margin-top: 16px">

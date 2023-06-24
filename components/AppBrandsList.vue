@@ -1,9 +1,10 @@
 <template>
     <div class="app-brands-list" v-if="brandsCategories">
+        <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">برند خود را انتخاب کنید</h4>
+
         <ul class="app-brands-list-inner">
-            <!-- TODO - fix flex issue -->
             <template v-for="category in brandsCategories" :key="category.id">
-                <div class="app-brands-list-item-outer">
+                <div class="app-brands-list-item-outer" v-if="category.brands?.length > 0">
                     <li class="app-brands-list-item text-aqua-300 text-md weight-bold" style="margin-top: 16px">
                         {{ category.title }}
                     </li>

@@ -22,15 +22,11 @@
                 </div>
             </aside>
             <section class="home-body-content">
-                <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">برند خود را انتخاب کنید</h4>
-
                 <div class="home-body-content-inner" style="padding-right: 20px">
                     <app-brands-list v-if="activeFilter == 'brand'" />
                     <app-models-list v-if="activeFilter == 'model'" />
                     <app-trims-list v-if="activeFilter == 'trim'" />
-                    <pre v-if="activeFilter == 'year'">
-                        {{ years }}
-                    </pre>
+                    <app-years-list v-if="activeFilter == 'year'" />
                 </div>
 
                 <p class="home-body-content-paragraph text-sm text-gray-300">
@@ -55,12 +51,11 @@ import AppListItem from "~/components/AppListItem.vue";
 import AppBrandsList from "~/components/AppBrandsList.vue";
 import AppModelsList from "~/components/AppModelsList.vue";
 import AppTrimsList from "~/components/AppTrimsList.vue";
+import AppYearsList from "~/components/AppYearsList.vue";
 
 // * store
 import { useFiltersStore } from "~/store/filters.store";
-import { useYearsStore } from "~/store/years.store";
 const { filters, removeFilter, activeFilter, setActiveFilter } = useFiltersStore();
-const { years } = useYearsStore();
 
 setActiveFilter("brand");
 

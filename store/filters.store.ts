@@ -19,7 +19,8 @@ export const useFiltersStore = () => {
     const removeFilter = (index: number | undefined): void => {
         if (!index) return;
         const filterIndex = filters.value.findIndex((filter) => filter.index == index);
-        filters.value.splice(filterIndex, 1);
+        // removes all arrays items after clicked item
+        filters.value.length = filterIndex;
     };
 
     return { activeFilter, filters, addFilter, removeFilter, setActiveFilter };
