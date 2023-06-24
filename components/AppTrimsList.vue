@@ -1,10 +1,10 @@
 <template>
     <div class="app-trims-list">
-        <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">تریم موردنظر را انتخاب کنید</h4>
+        <h4 class="text-lg weight-medium text-gray-500 mb-3">تریم موردنظر را انتخاب کنید</h4>
 
         <ul class="app-trims-list-inner" v-if="trims.length > 0">
             <template v-for="trim in trims" :key="trim.id">
-                <div class="app-trims-list-item-inner" style="margin-top: 16px">
+                <div class="app-trims-list-item-inner mt-3">
                     <app-button color="aqua" size="sm" variant="flat" @click="selectTrimHandler(trim)">
                         {{ trim.name }}
                     </app-button>

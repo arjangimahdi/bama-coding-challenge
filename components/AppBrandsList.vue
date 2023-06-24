@@ -1,15 +1,15 @@
 <template>
     <div class="app-brands-list" v-if="brandsCategories">
-        <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">برند خود را انتخاب کنید</h4>
+        <h4 class="text-lg weight-medium text-gray-500 mb-3">برند خود را انتخاب کنید</h4>
 
         <ul class="app-brands-list-inner">
             <template v-for="category in brandsCategories" :key="category.id">
                 <div class="app-brands-list-item-outer" v-if="category.brands?.length > 0">
-                    <li class="app-brands-list-item text-aqua-300 text-md weight-bold" style="margin-top: 16px">
+                    <li class="app-brands-list-item text-aqua-300 text-md weight-bold mt-3">
                         {{ category.title }}
                     </li>
                     <template v-for="brand in category.brands" :key="brand.id">
-                        <div class="app-brands-list-item-inner" style="margin-top: 16px">
+                        <div class="app-brands-list-item-inner mt-3">
                             <app-button color="aqua" size="sm" variant="flat" @click="selectBrandHandler(brand)">
                                 {{ brand.name }}
                             </app-button>

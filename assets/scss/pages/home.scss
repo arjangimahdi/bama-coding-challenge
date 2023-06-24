@@ -4,13 +4,6 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 32px;
-        &-title {
-            margin: 0px;
-        }
-        &-subtitle {
-            margin: 0px;
-        }
     }
     &-body {
         display: flex;
@@ -19,13 +12,11 @@
         justify-content: flex-start;
         &-sidebar {
             width: 15%;
-            margin-left: 20px;
         }
         &-content {
             width: 70%;
             &-inner {
                 height: 500px;
-                margin-bottom: 32px;
                 border-right: 1px solid #dcdce3;
             }
             &-paragraph {
@@ -49,5 +40,4 @@
 .vertical-separator {
     width: 1px;
     height: 16px;
-    margin: 0px 8px;
 }

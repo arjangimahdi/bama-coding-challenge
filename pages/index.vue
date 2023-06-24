@@ -1,19 +1,19 @@
 <template>
     <div id="home" class="home">
-        <div class="home-heading">
-            <h1 class="home-heading-title text-xl weight-bold text-gray-500">ماشین حساب</h1>
-            <div class="vertical-separator bg-gray-300"></div>
-            <h2 class="home-heading-subtitle text-md weight-normal text-gray-400">محاسبه قیمت خودرو کارکرده</h2>
+        <div class="home-heading mb-7">
+            <h1 class="text-xl weight-bold text-gray-500">ماشین حساب</h1>
+            <div class="vertical-separator mr-3 ml-3 bg-gray-300"></div>
+            <h2 class="text-md weight-normal text-gray-400">محاسبه قیمت خودرو کارکرده</h2>
         </div>
 
         <div class="home-body">
-            <aside class="home-body-sidebar">
+            <aside class="home-body-sidebar ml-5">
                 <p class="text-gray-400 text-md font-normal">
                     براسال
                     <span class="text-2xl weight-medium text-aqua-400">{{ _totalDealsCount }}</span>
                     معامله صورت گرفته
                 </p>
-                <div class="home-body-filters-list" style="margin-top: 10px">
+                <div class="home-body-filters-list mt-3">
                     <template v-for="filter in filters" :key="filter.index">
                         <app-list-item @remove="removeFilterHandler(filter)">
                             {{ filter.name }}
@@ -22,7 +22,7 @@
                 </div>
             </aside>
             <section class="home-body-content">
-                <div class="home-body-content-inner" style="padding-right: 20px">
+                <div class="home-body-content-inner mb-6 pr-6">
                     <app-brands-list v-if="activeFilter == 'brand'" />
                     <app-models-list v-if="activeFilter == 'model'" />
                     <app-trims-list v-if="activeFilter == 'trim'" />

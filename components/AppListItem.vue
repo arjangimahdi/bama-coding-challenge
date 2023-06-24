@@ -1,6 +1,6 @@
 <template>
-    <div class="app-list-item bg-gray-100">
-        <div class="app-list-item-title text-sm text-gray-300">
+    <div class="app-list-item mt-4 bg-gray-100">
+        <div class="pr-3 text-sm text-gray-300">
             <span> <slot /> </span>
         </div>
         <app-button size="md" variant="plain" color="gray" square @click="emit('remove')">

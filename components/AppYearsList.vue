@@ -1,10 +1,10 @@
 <template>
     <div class="app-years-list">
-        <h4 class="text-lg weight-medium text-gray-500" style="margin-bottom: 30px">سال ساخت را انتخاب کنید</h4>
+        <h4 class="text-lg weight-medium text-gray-500 mb-3">سال ساخت را انتخاب کنید</h4>
 
         <ul class="app-years-list-inner" v-if="years.length > 0">
             <template v-for="year in years" :key="year.id">
-                <div class="app-years-list-item-inner" style="margin-top: 16px">
+                <div class="app-years-list-item-inner mt-3">
                     <app-button color="aqua" size="sm" variant="flat" @click="selectTrimHandler(year)">
                         {{ year.year }}
                     </app-button>
