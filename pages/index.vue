@@ -27,6 +27,7 @@
                     <app-models-list v-if="activeFilter == 'model'" />
                     <app-trims-list v-if="activeFilter == 'trim'" />
                     <app-years-list v-if="activeFilter == 'year'" />
+                    <app-card-mileage v-if="activeFilter == 'mileage'" ></app-card-mileage>
                 </div>
 
                 <p class="home-body-content-paragraph text-sm text-gray-300">
@@ -52,6 +53,7 @@ import AppBrandsList from "~/components/AppBrandsList.vue";
 import AppModelsList from "~/components/AppModelsList.vue";
 import AppTrimsList from "~/components/AppTrimsList.vue";
 import AppYearsList from "~/components/AppYearsList.vue";
+import AppCardMileage from '~/components/AppCarMileage.vue';
 
 // * store
 import { useFiltersStore } from "~/store/filters.store";

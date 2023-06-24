@@ -34,7 +34,7 @@ const selectTrimHandler = (year: Years) => {
         },
     };
 
-    setActiveFilter("year");
+    setActiveFilter("mileage");
     addFilter(payload);
 };
 </script>
