@@ -15,6 +15,7 @@
                 </p>
                 <div class="home-body-filters-list mt-3">
                     <template v-for="filter in filters" :key="filter.index">
+                        <div v-if="filter.entity.name == 'mileage'" class="mt-4 text-md weight-bold text-gray-400">کارکرد</div>
                         <app-list-item @remove="removeFilterHandler(filter)">
                             {{ filter.name }}
                         </app-list-item>

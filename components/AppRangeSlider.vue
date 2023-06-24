@@ -32,52 +32,5 @@ const InputHandler = (event: Event) => {
 </script>
 
 <style lang="scss">
-.app-range-slider {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    &-input {
-        -webkit-appearance: none;
-        min-width: 250px;
-        height: 100px;
-        outline: none;
-        -webkit-transition: 0.2s;
-        transition: opacity 0.2s;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: var(--theme-gray-200);
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            background: var(--theme-gray-100);
-            border: 2px solid var(--theme-aqua-400);
-            border-radius: 25px;
-            cursor: pointer;
-            position: relative;
-            z-index: 10;
-        }
-
-        &::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            background: var(--theme-gray-100);
-            position: relative;
-            z-index: 10;
-            border: 2px solid var(--theme-aqua-400);
-            border-radius: 25px;
-            cursor: pointer;
-        }
-    }
-}
+@import '~/assets/scss/components/app-range-slider.scss';
 </style>

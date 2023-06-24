@@ -16,12 +16,22 @@ export const useFiltersStore = () => {
             filters.value = [{ index: 1, ...payload }];
         }
     };
+    const updateFilter = (type: string, payload: Filters): void => {
+        const filterIndex = filters.value.findIndex((filter) => filter.entity.name == type);
+
+        filters.value[filterIndex] = payload;
+    };
     const removeFilter = (index: number | undefined): void => {
         if (!index) return;
         const filterIndex = filters.value.findIndex((filter) => filter.index == index);
         // removes all arrays items after clicked item
         filters.value.length = filterIndex;
     };
+    const findFilter = (type: string): Filters => {
+        const filterIndex = filters.value.findIndex((filter) => filter.entity.name == type);
 
-    return { activeFilter, filters, addFilter, removeFilter, setActiveFilter };
+        return filters.value[filterIndex];
+    };
+
+    return { activeFilter, filters, addFilter, findFilter, removeFilter, updateFilter, setActiveFilter };
 };
