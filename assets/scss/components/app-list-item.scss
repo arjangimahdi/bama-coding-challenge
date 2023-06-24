@@ -1,8 +1,7 @@
 .app-list-item {
   display: flex;
-  min-width: 140px;
-  border-radius: 4px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-radius: 4px;
 }

@@ -10,7 +10,7 @@
             <aside class="home-body-sidebar ml-5">
                 <p class="text-gray-400 text-md font-normal">
                     براسال
-                    <span class="text-2xl weight-medium text-aqua-400">{{ _totalDealsCount }}</span>
+                    <span class="text-2xl weight-medium text-fuchsia-400">{{ _totalDealsCount }}</span>
                     معامله صورت گرفته
                 </p>
                 <div class="home-body-filters-list mt-3">

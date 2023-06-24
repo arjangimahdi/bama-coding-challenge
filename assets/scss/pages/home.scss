@@ -16,8 +16,9 @@
         &-content {
             width: 70%;
             &-inner {
-                height: 500px;
-                border-right: 1px solid #dcdce3;
+                height: 80vh;
+                overflow-y: auto;
+                border-right: 1px solid var(--theme-gray-200);
             }
             &-paragraph {
                 padding-right: 10px;
@@ -31,6 +32,45 @@
                     background-color: var(--theme-gray-300);
                     top: 6px;
                     right: 0px;
+                }
+            }
+        }
+    }
+}
+
+// * media queries (tablet)
+@media screen and (max-width: 920px) {
+    .home {
+        &-body {
+            &-sidebar {
+                width: 20%;
+            }
+            &-content {
+                width: 75%;
+                &-inner {
+                    height: 70vh;
+                }
+            }
+        }
+    }
+}
+// * media queries (mobile)
+@media screen and (max-width: 620px) {
+    .home {
+        &-body {
+            flex-direction: column;
+            &-sidebar {
+                width: 100%;
+            }
+            &-content {
+                width: 100%;
+                margin-top: 16px;
+                &-inner {
+                    height: 50vh;
+                    border-right: none;
+                    padding-right: 0px !important;
+                    padding-top: 16px !important;
+                    border-top: 1px solid var(--theme-gray-200);
                 }
             }
         }
